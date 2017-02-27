@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>所有問題</h1><br>
+ {% for question in questions %}
+    <a href="/questions/{{question.id}}">{{question.subject}}</a><br/>
+        {% endfor %}
+{% endblock %}

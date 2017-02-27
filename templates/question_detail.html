@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>個別Q＆A</h1><br>
+<h2>{{question.subject}}?</h2>
+<p><b>Published:</b> {{question.publication_date|date:"D, Y/m/d" }}</p>
+        <h3>Answers</h3>
+        <ul>
+                {% for answer in question.answer_set.all %}
+                        <li>{{answer.content|safe}}</li>
+                {% empty %}
+                        <li>No answers yet</li>
+                {% endfor %}
+        </ul>
+{% endblock %}

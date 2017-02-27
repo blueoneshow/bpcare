@@ -1,0 +1,10 @@
+<html>
+<head><title>日誌總覽</title>
+</head>
+<body>
+        <h1>我的日誌：</h1>
+        {% for diary in diaries %}
+        {{diary.time}}--{{diary.memo}}<BR>
+        {% endfor %}
+</body>
+</html>
