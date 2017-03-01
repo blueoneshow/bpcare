@@ -1,11 +1,54 @@
-<html>
-        <head><title>首頁</title>
-        </head>
-        <body>
-                <h1>Sängerknaben</h1>
-                {% for choir in choirs %}
-                <a href="{{choir}}">{{choir}}</a>
-                {% endfor %}</br>                
-                <img src=/static/dog.gif>
-        </body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="wrapper row3">
+  <section class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="nospace group latest">
+      <li class="one_third first">
+        <article>
+          <figure><a href="#"><img src="https://sdl-stickershop.line.naver.jp/products/0/0/1/1371575/android/stickers/14604366.png" alt=""></a>
+            <figcaption class="group">
+              <time datetime="2017-02-28">28<sup>th</sup> Febuary 2017</time>
+              <span>by <a href="#">LTN</a></span> </figcaption>
+          </figure>
+          <div class="postexcerpt">
+            <h4 class="heading">「LINE貼圖」 細心提醒高血壓患者</h4>
+            <p>高血壓有年輕化趨勢！醫師發現，近年30歲以上的高血壓人口有增加一倍趨勢，但是很多民眾卻沒有定時測量血壓的習慣，因此中華民國心臟基金會昨天與藥廠共同推出「UPUP 舉牌小人x健康心人物」LINE貼圖，不僅可提醒民眾要定期測量血壓，也可提醒患者要按時吃藥&hellip;</p>
+            <footer><a href="http://news.ltn.com.tw/news/life/paper/1076810">Read More &raquo;</a></footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article>
+          <figure><a href="#"><img src="https://sdl-stickershop.line.naver.jp/products/0/0/1/1371575/android/stickers/14604363.png" alt=""></a>
+            <figcaption class="group">
+              <time datetime="2017-02-28">28<sup>th</sup> Febuary 2017</time>
+              <span>by <a href="#">Hinet</a></span> </figcaption>
+          </figure>
+          <div class="postexcerpt">
+            <h4 class="heading">眼底出血注意 高血壓找上門</h4>
+            <p>不知不覺中，高血壓已悄悄損害著人體的重要器官，平時無聲無息，一有機會便誘發眼底出血（失明）、心肌梗死、中風或高血壓腦病，可謂一鳴驚人，甚至一舉奪命&hellip;</p>
+            <footer><a href="http://times.hinet.net/news/20051085">Read More &raquo;</a></footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article>
+          <figure><a href="#"><img src="https://sdl-stickershop.line.naver.jp/products/0/0/1/1371575/android/stickers/14604377.png" alt=""></a>
+            <figcaption class="group">
+              <time datetime="2017-02-20">20<sup>th</sup> Febuary 2017</time>
+              <span>by <a href="#">Hinet</a></span> </figcaption>
+          </figure>
+          <div class="postexcerpt">
+            <h4 class="heading">成人健檢三成高血脂、二成高血壓</h4>
+            <p>根據國民健康署104年成人預防保健服務資料顯示，全國共有181萬以上的人接受服務，其中新發現高血壓的比率為20.2%、高血糖8.9%、高血脂28%&hellip;</p>
+            <footer><a href="http://times.hinet.net/news/20033827">Read More &raquo;</a></footer>
+          </div>
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </section>
+</div>
+{% endblock %}

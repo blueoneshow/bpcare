@@ -1,7 +1,281 @@
-{% extends "base.html" %}
-{% block content %}
-        <br>
-        {% for month in months %}
-               <li>{{month.date}}<a href="/diary/{{month.date}}">日誌</a>|<a href="/money/{{month.date}}">帳本</a></li><BR>
-        {% endfor %}
-{% endblock %}
+<!DOCTYPE html>
+<!--
+Template Name: Aerogem
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>我的血壓管理手冊</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="/static/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="fl_left">
+      <ul class="nospace">
+        <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+        <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+      </ul>
+    </div>
+    <div class="fl_right">
+      <ul class="nospace">
+        <li><a href="/home"><i class="fa fa-lg fa-home"></i></a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Register</a></li>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url('http://2.bp.blogspot.com/-kpR81fOHBA0/UlGwCjGQyII/AAAAAAAAAD0/cD_mrKXJJps/s1600/20110926101442.jpg');"> 
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="/home">我的血壓管理手冊</a></h1>
+      </div>
+      <!-- ################################################################################################ -->
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+         <li><a class="active" href="/money/add">新增血壓值</a></li>        
+         <li><a class="active" href="/show">最新消息</a></li>
+         <li><a class="active" href="/knowledge">認識高血壓</a></li>
+         <li><a class="active" href="/questions">線上諮詢</a></li> 
+          
+        </ul>
+      </nav>
+    </header>
+    <!-- ################################################################################################ -->
+    <div id="pageintro" class="hoc clear">
+      <article>
+        <h2 class="heading">血壓不頑固 健康齊守護</h2>
+        <p>立刻來測量血壓吧！</p>
+        <footer><a class="btn" href="/money/add">記錄我最新的血壓</a></footer>
+      </article>
+    </div>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <section class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <div class="center btmspace-50">
+      <h3 class="font-x2 nospace">我的測量記錄</h3><br>
+      <p class="nospace"> {% for month in months %}
+               <h5><li>{{month.date}}　<a href="/money/{{month.date}}">血壓紀錄</a></li><BR></h5>
+        {% endfor %}</p>
+    </div>
+    <ul class="nospace group latest">
+      <li class="one_third first">
+        <article>
+          <figure><a href="#"><img src="images/demo/320x220.png" alt=""></a>
+            <figcaption class="group">
+              <time datetime="2045-04-06">6<sup>th</sup> April 2045</time>
+              <span>by <a href="#">Admin</a></span> </figcaption>
+          </figure>
+          <div class="postexcerpt">
+            <h4 class="heading">Vestibulum ut ac mattis</h4>
+            <p>Quisque consectetur nibh pharetra vitae id mattis eu tellus aliquam malesuada tempus pulvinar&hellip;</p>
+            <footer><a href="#">Read More &raquo;</a></footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article>
+          <figure><a href="#"><img src="images/demo/320x220.png" alt=""></a>
+            <figcaption class="group">
+              <time datetime="2045-04-05">5<sup>th</sup> April 2045</time>
+              <span>by <a href="#">Admin</a></span> </figcaption>
+          </figure>
+          <div class="postexcerpt">
+            <h4 class="heading">Risus nulla varius sit</h4>
+            <p>Eget tincidunt neque in hac habitasse platea dictumst phasellus sollicitudin porta congue ut gravida&hellip;</p>
+            <footer><a href="#">Read More &raquo;</a></footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article>
+          <figure><a href="#"><img src="images/demo/320x220.png" alt=""></a>
+            <figcaption class="group">
+              <time datetime="2045-04-04">4<sup>th</sup> April 2045</time>
+              <span>by <a href="#">Admin</a></span> </figcaption>
+          </figure>
+          <div class="postexcerpt">
+            <h4 class="heading">Amet est at elementum</h4>
+            <p>Dapibus duis eu arcu gravida gravida tellus sit amet rhoncus libero mauris ac dolor mattis tincidunt&hellip;</p>
+            <footer><a href="#">Read More &raquo;</a></footer>
+          </div>
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </section>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->  
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/02.png');">
+  <article class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <div class="three_quarter first">
+      <h2 class="heading">血壓不頑固 健康齊守護</h2>
+      <p class="nospace">立刻來測量血壓吧！</p>
+    </div>
+    <footer class="one_quarter"><a class="btn medium" href="/money/add">記錄我最新的血壓&raquo;</a></footer>
+    <!-- ################################################################################################ -->
+  </article>
+</div><!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <article class="group btmspace-80">
+      <div class="one_half first"><img class="inspace-10 borderedbox" src="https://sdl-stickershop.line.naver.jp/products/0/0/1/1371575/android/stickers/14604366.png" alt=""></div>
+      <div class="one_half">
+        <p class="nospace font-xs">最新消息</p>
+        <h3 class="heading">「LINE貼圖」 細心提醒高血壓患者</h3>
+        <p>高血壓有年輕化趨勢！醫師發現，近年30歲以上的高血壓人口有增加一倍趨勢，但是很多民眾卻沒有定時測量血壓的習慣，因此中華民國心臟基金會昨天與藥廠共同推出「UPUP 舉牌小人x健康心人物」LINE貼圖，不僅可提醒民眾要定期測量血壓，也可提醒患者要按時吃藥。</p>
+        <p>30歲的陳先生身高170公分、體重158公斤，從沒想過自己會罹患高血壓，平時也沒有量血壓的習慣，直到3年前的一次寒流昏倒被送醫急救，才發現他的心跳每分鐘高達180下，收縮壓飆到180mmHg，現在他血壓控制良好，家人也常會透過LINE傳訊提醒他按時服藥。</p>
+        <p>中華民國心臟基金會執行長、台大心臟內科主任林俊立表示，過去30到39歲男性罹患高血壓比例僅11.7%、女性罹患高血壓比例2.8% ...</p>
+        <footer><a href="http://news.ltn.com.tw/news/life/paper/1076810">Read More &raquo;</a></footer>
+      </div>
+    </article>
+    <!-- ################################################################################################ -->
+    <hr class="btmspace-80">
+    <!-- ################################################################################################ -->
+    <div class="center btmspace-80">
+      <h3 class="heading">更多新聞</h3>
+      <p class="nospace"></p>
+    </div>
+    <ul class="nospace group cta">
+      <li class="one_third first">
+        <article><a href="#"><i class="fa fa-gamepad"></i></a>
+          <h6 class="heading">眼底出血注意 高血壓找上門</h6>
+          <p>不知不覺中，高血壓已悄悄損害著人體的重要器官，平時無聲無息，一有機會便誘發眼底出血（失明）、心肌梗死、中風或高血壓腦病，可謂一鳴驚人，甚至一舉奪命&hellip;</p>
+          <footer><a href="http://times.hinet.net/news/20051085">Read More &raquo;</a></footer>
+        </article>
+      </li>
+      <li class="one_third">
+        <article><a href="#"><i class="fa fa-location-arrow"></i></a>
+          <h6 class="heading">你有高血壓體質嗎？</h6>
+          <p>哪些人容易得高血壓？銀髮族、容易累積壓力的人、過胖，有「代謝症候群」的人、更年期的女性、孕婦、糖尿病患&hellip;</p>
+          <footer><a href="https://udn.com/news/story/7016/2260548">Read More &raquo;</a></footer>
+        </article>
+      </li>
+      <li class="one_third">
+        <article><a href="#"><i class="fa fa-subway"></i></a>
+          <h6 class="heading">成人健檢三成高血脂、二成高血壓</h6>
+          <p>根據國民健康署104年成人預防保健服務資料顯示，全國共有181萬以上的人接受服務，其中新發現高血壓的比率為20.2%、高血糖8.9%、高血脂28%&hellip;</p>
+          <footer><a href="http://times.hinet.net/news/20033827">Read More &raquo;</a></footer>
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+
+
+<div class="wrapper row4 bgded overlay" style="background-image:url('images/demo/backgrounds/03.png');">
+  <footer id="footer" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_quarter first">
+      <h6 class="title">Cras eros malesuada</h6>
+      <p>Ridiculus mus fusce nec odio ut libero vestibulum luctus quis tortor morbi vulputate tincidunt nisi eu aliquet sapien imperdiet suspendisse.</p>
+      <p>Erat eget luctus porta orci mauris volutpat nisi at ultricies accumsan cum sociis natoque penatibus magnis.</p>
+    </div>
+    <div class="one_quarter">
+      <h6 class="title">Urna sit ollicitudin</h6>
+      <ul class="nospace linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+          Street Name &amp; Number, Town, Postcode/Zip
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> +00 (123) 456 7890<br>
+          +00 (123) 456 7890</li>
+        <li><i class="fa fa-fax"></i> +00 (123) 456 7890</li>
+        <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+      </ul>
+    </div>
+    <div class="one_quarter">
+      <h6 class="title">Libero sapien rhoncus</h6>
+      <ul class="nospace linklist">
+        <li><a href="#">Primis in faucibus orci</a></li>
+        <li><a href="#">Luctus et ultrices posuere</a></li>
+        <li><a href="#">Cubilia curae aenean quis</a></li>
+        <li><a href="#">Magna in tellus suscipit</a></li>
+        <li><a href="#">Consectetur quis quis ipsum</a></li>
+      </ul>
+    </div>
+    <div class="one_quarter">
+      <h6 class="title">Cursus eleifend tempor</h6>
+      <ul class="nospace linklist">
+        <li>
+          <article>
+            <h6 class="nospace font-x1"><a href="#">Cras fermentum consequat</a></h6>
+            <time class="font-xs block btmspace-10" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time>
+            <p class="nospace">Est cras purus augue eget lorem vitae porta nisl cras&hellip;</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h6 class="nospace font-x1"><a href="#">Tellus purus malesuada</a></h6>
+            <time class="font-xs block btmspace-10" datetime="2045-04-05">Thursday, 5<sup>th</sup> April 2045</time>
+            <p class="nospace">Non porta quis venenatis non purus mauris fringilla velit&hellip;</p>
+          </article>
+        </li>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

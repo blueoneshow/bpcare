@@ -28,8 +28,8 @@ class Month(models.Model):
         
 # 帳目
 class Money(models.Model):
-        item = models.CharField(max_length=30)
         kind = models.IntegerField(default=0)
+        item = models.IntegerField(default=0)       
         price = models.IntegerField(default=0)
         time = models.DateTimeField(auto_now_add=True)
 

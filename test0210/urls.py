@@ -19,7 +19,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^show/$', 'show.views.show'),
-    url(r'^pccb/$', 'show.views.pccb'),
+    url(r'^knowledge/$', 'show.views.knowledge'),
     url(r'^questions/$', 'question.views.questions'),
     url(r'^answers/$', 'question.views.answers'),
     url(r'^questions/(?P<question_id>\d+)/$', 'question.views.question_detail'),
@@ -34,4 +34,6 @@ urlpatterns = [
     url(r'^diary/word/(?P<month>\d+)/$','web.views.diary_word'),
     url(r'^money/(?P<month>\d+)$','web.views.money'),
     url(r'^money/add/$','web.views.money_add'),
+    url(r'^money/excel/(?P<month>\d+)/$','web.views.money_excel'),
+    url(r'^$', 'web.views.home'),
 ]

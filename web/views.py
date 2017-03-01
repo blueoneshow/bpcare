@@ -11,6 +11,7 @@ from web.forms import MessageForm, DiaryForm, MoneyForm
 import StringIO
 from docx import *
 from docx.shared import Inches
+import xlsxwriter
 
 #既有留言總覽
 def board(request):
@@ -144,3 +145,31 @@ def money_add(request):
         else:
                 form = MoneyForm()
         return render_to_response('money_add.html',{'form': form}, context_instance=RequestContext(request))
+      
+      
+#匯出
+def money_excel(request, month):
+        time_year = int(month)/100
+        time_month = int(month)%100
+        moneys = Money.objects.filter(time__year=time_year, time__month=time_month).order_by("-id")
+        output = StringIO.StringIO()
+        workbook = xlsxwriter.Workbook(output)
+        worksheet = workbook.add_worksheet(month)
+        worksheet.write(0,2, u"收縮壓")
+        worksheet.write(0,1, u"類別")
+        worksheet.write(0,3, u"舒張壓")
+        worksheet.write(0,0, u"測量時間")
+        counter = 1
+        for money in moneys:
+                worksheet.write(counter,2, money.item)
+                worksheet.write(counter,1, money.kind)
+                worksheet.write(counter,3, money.price)
+                worksheet.write(counter,0, str(localtime(money.time).strftime("%b %d %Y %H:%M:%S")))
+                counter = counter + 1
+        workbook.close()
+        # xlsx_data contains the Excel file
+        response = HttpResponse(content_type='application/vnd.ms-excel')
+        response['Content-Disposition'] = 'attachment; filename=Money-'+str(localtime(timezone.now()).date())+'.xlsx'
+        xlsx_data = output.getvalue()
+        response.write(xlsx_data)
+        return response

@@ -16,21 +16,18 @@ class DiaryForm(forms.ModelForm):
 # 帳本表單
 class MoneyForm(forms.ModelForm):
         RELEVANCE_CHOICES = (
-                (1, "飲食"),
-                (2, "衣服"),
-                (3, "交通"),
-                (4, "教育"),
-                (5, "娛樂"),
-                (6, "其它"),
+                (1, "早上起床後"),
+                (2, "晚上睡覺前"),
+                (3, "其他時機"),
         )
         kind = forms.ChoiceField(choices = RELEVANCE_CHOICES, required=True)
 
         class Meta:
                 model = Money
-                fields = ['item', 'kind', 'price']
+                fields = ['kind', 'item', 'price']
 
         def __init__(self, *args, **kwargs):
-                super(MoneyForm, self).__init__(*args, **kwargs)
-                self.fields['item'].label = "項目"
-                self.fields['kind'].label = "類別"
-                self.fields['price'].label = "費用"
+                super(MoneyForm, self).__init__(*args, **kwargs)                
+                self.fields['kind'].label = "測量時機"
+                self.fields['item'].label = "收縮壓"
+                self.fields['price'].label = "舒張壓"

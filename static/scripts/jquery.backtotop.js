@@ -1,5 +1,5 @@
 /*
-Template Name: Cytocean
+Template Name: Aerogem
 Author: <a href="http://www.os-templates.com/">OS Templates</a>
 Author URI: http://www.os-templates.com/
 Licence: Free to use under our free template licence terms
